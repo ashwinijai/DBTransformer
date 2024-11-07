@@ -1,0 +1,50 @@
+{
+  "sourceDb":{
+    "userName":"sa",
+    "password":"password",
+    "tableName":"Employee"
+  },
+  "sourceProperties":[{
+    "columnName":"EMP_ID",
+    "dataType":"NUMBER",
+    "size":10,
+    "isMandatory":"true"
+  },{
+    "columnName":"EMP_NAME",
+    "dataType":"VARCHAR",
+    "size":10,
+    "isMandatory":"false"
+  },{
+    "columnName":"CITY",
+    "dataType":"VARCHAR",
+    "size":10,
+    "isMandatory":"false"
+  },
+    {
+      "columnName":"DEPT",
+      "dataType":"VARCHAR",
+      "size":10,
+      "isMandatory":false
+    }],    "targetProperties":[{
+  "columnName":"EMP_ID",
+  "dataType":"NUMBER",
+  "size":10,
+  "isMandatory":true
+},{
+  "columnName":"EMP_NAME",
+  "dataType":"VARCHAR",
+  "size":10,
+  "isMandatory":"false"
+},{
+  "columnName":"CITY",
+  "dataType":"VARCHAR",
+  "size":10,
+  "isMandatory":"false"
+},
+  {
+    "columnName":"DEPT",
+    "dataType":"VARCHAR",
+    "size":10,
+    "isMandatory":"false"
+  }],"dbMapping":[{"sourceColumn":"EMP_ID","targetColumn":"EMP_ID"},{"sourceColumn":"EMP_NAME","targetColumn":"EMP_NAME"},{"sourceColumn":"CITY","targetColumn":"CITY"},{"sourceColumn":"DEPT","targetColumn":"DEPT"}]
+}
