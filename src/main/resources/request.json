@@ -1,50 +1,88 @@
 {
-  "sourceDb":{
-    "userName":"sa",
-    "password":"password",
-    "tableName":"Employee"
+  "sourceDb": {
+    "url": "jdbc:h2:file:/Users/ashwinijayaraman/Downloads/Practice/DB;AUTO_SERVER=TRUE;SCHEMA=ABC",
+    "userName": "sa",
+    "password": "password",
+    "tableName": "Employee",
+    "schemaName": "ABC",
+    "dbType": "H2"
   },
-  "sourceProperties":[{
-    "columnName":"EMP_ID",
-    "dataType":"NUMBER",
-    "size":10,
-    "isMandatory":"true"
-  },{
-    "columnName":"EMP_NAME",
-    "dataType":"VARCHAR",
-    "size":10,
-    "isMandatory":"false"
-  },{
-    "columnName":"CITY",
-    "dataType":"VARCHAR",
-    "size":10,
-    "isMandatory":"false"
+  "targetDb": {
+    "url": "jdbc:h2:file:/Users/ashwinijayaraman/Downloads/Practice/DB1;AUTO_SERVER=TRUE;SCHEMA=ABC",
+    "userName": "sa",
+    "password": "password",
+    "tableName": "Employee",
+    "schemaName": "ABC",
+    "dbType": "H2"
   },
+  "sourceProperties": [
     {
-      "columnName":"DEPT",
-      "dataType":"VARCHAR",
-      "size":10,
-      "isMandatory":"false"
-    }],    "targetProperties":[{
-  "columnName":"EMP_ID",
-  "dataType":"NUMBER",
-  "size":10,
-  "isMandatory":"true"
-},{
-  "columnName":"EMP_NAME",
-  "dataType":"VARCHAR",
-  "size":10,
-  "isMandatory":"false"
-},{
-  "columnName":"CITY",
-  "dataType":"VARCHAR",
-  "size":10,
-  "isMandatory":"false"
-},
-  {
-    "columnName":"DEPT",
-    "dataType":"VARCHAR",
-    "size":10,
-    "isMandatory":"false"
-  }],"dbMapping":[{"sourceColumn":"EMP_ID","targetColumn":"EMP_ID"},{"sourceColumn":"EMP_NAME","targetColumn":"EMP_NAME"},{"sourceColumn":"CITY","targetColumn":"CITY"},{"sourceColumn":"DEPT","targetColumn":"DEPT"}]
+      "columnName": "EMP_ID",
+      "dataType": "NUMBER",
+      "size": 10,
+      "isMandatory": "true"
+    },
+    {
+      "columnName": "EMP_NAME",
+      "dataType": "VARCHAR",
+      "size": 10,
+      "isMandatory": "false"
+    },
+    {
+      "columnName": "CITY",
+      "dataType": "VARCHAR",
+      "size": 10,
+      "isMandatory": "false"
+    },
+    {
+      "columnName": "DEPT",
+      "dataType": "VARCHAR",
+      "size": 10,
+      "isMandatory": "false"
+    }
+  ],
+  "targetProperties": [
+    {
+      "columnName": "EMP_ID",
+      "dataType": "NUMBER",
+      "size": 10,
+      "isMandatory": "true"
+    },
+    {
+      "columnName": "EMP_NAME",
+      "dataType": "VARCHAR",
+      "size": 15,
+      "isMandatory": "false"
+    },
+    {
+      "columnName": "CITY",
+      "dataType": "VARCHAR",
+      "size": 10,
+      "isMandatory": "false"
+    },
+    {
+      "columnName": "DEPT",
+      "dataType": "VARCHAR",
+      "size": 10,
+      "isMandatory": "false"
+    }
+  ],
+  "dbMapping": [
+    {
+      "sourceColumn": "EMP_ID",
+      "targetColumn": "EMP_ID"
+    },
+    {
+      "sourceColumn": "EMP_NAME",
+      "targetColumn": "EMP_NAME"
+    },
+    {
+      "sourceColumn": "CITY",
+      "targetColumn": "CITY"
+    },
+    {
+      "sourceColumn": "DEPT",
+      "targetColumn": "DEPT"
+    }
+  ]
 }

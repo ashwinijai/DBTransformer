@@ -1,0 +1,100 @@
+{
+  "$schema" : "https://json-schema.org/draft/2020-12/schema",
+  "$defs" : {
+    "ColumnProperties" : {
+      "type" : "object",
+      "properties" : {
+        "columnName" : {
+          "type" : "string",
+          "minLength" : 1
+        },
+        "dataType" : {
+          "type" : "string",
+          "minLength" : 1,
+          "pattern" : "VARCHAR|NUMBER|CLOB"
+        },
+        "isMandatory" : {
+          "type" : "string",
+          "minLength" : 1,
+          "pattern" : "true|false"
+        },
+        "size" : {
+          "type" : "integer"
+        }
+      },
+      "required" : [ "columnName", "dataType", "isMandatory", "size" ]
+    },
+    "DBProperties" : {
+      "type" : "object",
+      "properties" : {
+        "dbType" : {
+          "type" : "string",
+          "minLength" : 1,
+          "pattern" : "ORACLE|H2"
+        },
+        "password" : {
+          "type" : "string",
+          "minLength" : 1
+        },
+        "schemaName" : {
+          "type" : "string",
+          "minLength" : 1
+        },
+        "tableName" : {
+          "type" : "string",
+          "minLength" : 1
+        },
+        "url" : {
+          "type" : "string",
+          "minLength" : 1
+        },
+        "userName" : {
+          "type" : "string",
+          "minLength" : 1
+        },
+        "whereClause" : {
+          "type" : "string"
+        }
+      },
+      "required" : [ "dbType", "password", "schemaName", "tableName", "url", "userName" ]
+    }
+  },
+  "type" : "object",
+  "properties" : {
+    "dbMapping" : {
+      "type" : "array",
+      "items" : {
+        "type" : "object",
+        "properties" : {
+          "sourceColumn" : {
+            "type" : "string",
+            "minLength" : 1
+          },
+          "targetColumn" : {
+            "type" : "string",
+            "minLength" : 1
+          }
+        },
+        "required" : [ "sourceColumn", "targetColumn" ]
+      }
+    },
+    "sourceDb" : {
+      "$ref" : "#/$defs/DBProperties"
+    },
+    "sourceProperties" : {
+      "type" : "array",
+      "items" : {
+        "$ref" : "#/$defs/ColumnProperties"
+      }
+    },
+    "targetDb" : {
+      "$ref" : "#/$defs/DBProperties"
+    },
+    "targetProperties" : {
+      "type" : "array",
+      "items" : {
+        "$ref" : "#/$defs/ColumnProperties"
+      }
+    }
+  }
+}
